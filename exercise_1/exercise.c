@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "exercise.h"
+#include <string.h>
 
 void dump_graphics(graphics_t gsettings[10]) {
 	int *ptr = (int *)gsettings;
@@ -32,3 +33,22 @@ void concat_strings(char *str1, const char *str2) {
 
 	printf("%s", str1);
 }
+
+int smart_append(TextBuffer *dest, const char *src) {
+	if (dest == NULL || src == NULL) {
+		return 1;
+	}
+
+	int src_len = strlen(src);
+	int remaining_space = sizeof(dest->buffer) - dest->length - 1;
+
+	if (src_len < remaining_space) {
+		strncat(dest->buffer, src, remaining_space);
+		dest->length = sizeof(dest->buffer) - 1;
+		return 1;
+	} else {
+		strcat(dest->buffer, src);
+		dest->length += src_len;
+		return 0;
+	}
+} 

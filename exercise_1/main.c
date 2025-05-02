@@ -1,4 +1,6 @@
 #include "exercise.h"
+#include <stdio.h>
+#include <string.h>
 
 int main() {
 	graphics_t graphics_array[10] = {
@@ -18,5 +20,12 @@ int main() {
 
 	char buffer[100] = "Hello";
 	concat_strings(buffer, "Johnny");
+
+	TextBuffer dest;
+	strcpy(dest.buffer, "Some text that will be appended any other text");
+	dest.length = 63;
+	const char *src = " Extra";
+	int result = smart_append(&dest, src);
+	printf("Smart concat result is %d", result);
 	return 0;
 }

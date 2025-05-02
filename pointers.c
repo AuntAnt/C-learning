@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 typedef struct CodeFile {
 	int lines;
 	int filetype;
