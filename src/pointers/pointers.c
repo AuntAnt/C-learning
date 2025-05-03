@@ -16,7 +16,7 @@ void change_filetype(codefile_t *f, int new_type) {
 }
 
 
-int main() {
+void experiments_with_pointers() {
 	int a = 100;
 	int *a_ptr = &a;
 
@@ -40,5 +40,4 @@ int main() {
 	printf("%d\n", some_f.filetype);
 	//printf("%d\n", *a_ptr);
 	//printf("%p\n", &a);
-	return 0;
 }

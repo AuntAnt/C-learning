@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+void string_concat_exercises() {
 	graphics_t graphics_array[10] = {
 		{60, 1080, 1920},
 		{30, 720, 1280},
@@ -27,5 +27,4 @@ int main() {
 	const char *src = " Extra";
 	int result = smart_append(&dest, src);
 	printf("Smart concat result is %d", result);
-	return 0;
 }
