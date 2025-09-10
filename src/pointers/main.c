@@ -15,8 +15,6 @@ void string_concat_exercises() {
 		{165, 1440, 2560},
 		{90, 1200, 1920}
 	};
-	
-	/*dump_graphics(graphics_array);*/
 
 	char buffer[100] = "Hello";
 	concat_strings(buffer, "Johnny");
